@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>{{title}}</title>
+        <style>
+            form {{
+                background-color: #eee;
+                padding: 20px;
+                margin: 0 auto;
+                width: 540px;
+                font: 16px sans-serif;
+                border-radius: 10px;
+            }}
+            textarea {{
+                margin: 10px 0;
+                width: 540px;
+                height: 120px;
+            }}
+
+        </style>
+    </head>
+    <body>
+        <div>
+            <table>
+                <tr>
+                    <td>
+                    <a href="index.html">home page</a>
+                    </td>
+                    <td>
+                    <a href="form.html">create a blog post</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        {% Block content %}
+        {% endblock %}
+    </body>
+</html>

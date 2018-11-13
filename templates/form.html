@@ -1,0 +1,19 @@
+{% extends index.html %}
+{% block content %}
+<h1>Create a post</h1>
+<hr />
+<form method='post'>
+    <label>
+        Title:
+        <input type="text" name='title' />
+    </label>
+
+    <label>
+        Body:
+        <input type="textarea" name='body' />
+    </label>
+    <input type="submit" value='Add Post' />
+</form>
+
+<hr />
+{% endblock %}
