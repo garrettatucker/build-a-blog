@@ -1,38 +1,19 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <title>{{title}}</title>
-        <style>
-            form {{
-                background-color: #eee;
-                padding: 20px;
-                margin: 0 auto;
-                width: 540px;
-                font: 16px sans-serif;
-                border-radius: 10px;
-            }}
-            textarea {{
-                margin: 10px 0;
-                width: 540px;
-                height: 120px;
-            }}
+{% extends "base.html" %}
 
-        </style>
-    </head>
-    <body>
-        <div>
-            <table>
-                <tr>
-                    <td>
-                    <a href="index.html">home page</a>
-                    </td>
-                    <td>
-                    <a href="form.html">create a blog post</a>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        {% Block content %}
-        {% endblock %}
-    </body>
-</html>
+
+{%block content%}
+    <h1>Welcome to the blog!</h1>
+    {% if posts|length == 0 %}
+        <h3>No blog posts yet.</h3>
+    {% else %}
+
+    {% for post in posts %}
+
+        <a href="/blog?id={{post.id}}"><h2>{{post.title}}</h2></a>
+        <p>{{post.body}}</p>
+        <hr>            
+
+    {% endfor %}  
+
+    {% endif %}
+{%endblock%}
